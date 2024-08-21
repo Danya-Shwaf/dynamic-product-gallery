@@ -4,6 +4,7 @@ mybutton.addEventListener('click',function() {
     fetch("https://fakestoreapi.com/products?").then((response) => {
         let myData=response.json();
         myData.length=8;
+        console.log(myData);
         return myData;
     }).then((products) =>{
         products.forEach(product => {
@@ -20,5 +21,5 @@ mybutton.addEventListener('click',function() {
             div.appendChild(productDiv);
         });
         document.body.appendChild(div);
-    })
+    }).catch((rej) => console.log(console.error("Error")));
 });
